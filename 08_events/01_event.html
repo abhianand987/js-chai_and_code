@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color:#414141 ; color : aliceblue ">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li>
+                <img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop">
+            </li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+
+   </div>
+
+   <h1>hiii</h1>
+    
+</body>
+<script>
+    // document.getElementById('owl').onclick = function(){
+    //     alert('owl clicked')
+    // }
+
+    // document.getElementById('owl').addEventListener('click', function(){
+    //     alert('owl clicked')
+    // } , false) 
+    // by default --> false in event listener so need to write it
+
+    // attachEvent
+    // jQuery - on-click
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log(e); // e is an object and has many properties
+
+    // } , false)
+
+    // e is an object and has many many properties i.e, key-value pairs are there in the events :
+    // type - click etc , timeStamp - time of event , defaultPrevented --> default behaviour of a tag can be stopped using this
+    // taget , toElement , srcElement , currentTarget
+    // clientX , clientY , screenX , screenY
+    //altkey , ctrkey , shiftkey , keyCode
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log('clicked inside the ul'); 
+
+    // } , false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log('owl clicked');
+    //     e.stopPropagation() 
+    //     // if we use stop propagation method then event bubble karke upar ki taraf ni jyga i.e, bas lower layer hi hoga execute
+    //     // i.e, we are stopping the event propagation
+
+    // } , false)
+
+    // false --> bubbling event propagation == from lower layer to upper layer
+    // true  --> capturing event propagation == from upper layer to lower layer
+    // when both false then it is bubbling i.e, from 
+
+    // document.getElementById('google').addEventListener
+    // ('click' , function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log('google clicked');
+        
+    // } , false)
+
+
+     document.querySelector('#images').addEventListener
+     ('click' , function(e){
+        console.log(e.target.tagName);
+
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode;
+        // image --> li --> ul
+            removeIt.remove();
+            
+        }
+
+        // BCOZ PRBLM ye aargi when we are clicking outside images i.e, li --> so li ka
+        //parent is ul and it is removing the ul i.e, all the images.
+
+        
+
+        
+
+        
+
+
+     } , false)
+
+     //removeIt.parentNode.removeChild(removeIt)
+
+
+
+
+
+
+
+
+    
+</script>
+
+</html>

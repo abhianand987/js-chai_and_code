@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Chai aur code</h1>
+
+    <button id="stop">Stop</button>
+    
+</body>
+
+<script>
+    const sayAbhishek = function(){
+            console.log('Abhishek');
+    }
+
+    
+
+
+    setTimeout(sayAbhishek , 2000)
+    // just giving here the reference of the function and not executing the function
+
+    
+    // after 2000 ms do the work of printing once
+    // setInterval means after every 2000ms I will keep repeating the tasks
+
+    // document.querySelector('h1').innerHTML = 'Best JS Series'; // jaise hi likha waise change
+    // //but I want this thing to happen after 2 seconds and not turant
+
+    const changeText = ()=>{
+        document.querySelector('h1').innerHTML = 'Best JS Series';
+    }
+
+    const changeMe = setTimeout(changeText, 3000);
+
+    // clearTimeout(changeMe) // use to clear the timeout set by you and will use the reference ki 
+    //kon se timeout ko rokna hai but iska bhi kya fayda we need to do this on an event
+
+    document.querySelector('#stop').addEventListener
+    ('click' , function(){
+        clearTimeout(changeMe);
+        console.log('stopped');
+    })
+
+
+
+
+
+
+
+</script>
+</html>
